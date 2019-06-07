@@ -1,0 +1,32 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+group = 'com.crgt.android'
+version = version_name
+
+android {
+    compileSdkVersion Integer.parseInt(compile_sdk_version)
+
+    defaultConfig {
+        minSdkVersion Integer.parseInt(min_sdk_version)
+        targetSdkVersion Integer.parseInt(target_sdk_version)
+        versionCode Integer.parseInt(version_code)
+        versionName version_name
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api 'com.crgt.ilife:service-base:1.0.1-SNAPSHOT'
+}
+
+apply from: '../gradle-maven-push.gradle'

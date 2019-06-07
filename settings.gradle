@@ -1,0 +1,3 @@
+include ':demo.service', ':service-api', ':service-base', ':demo.serviceModule', ':service-plugin', ':service-compiler'
+
+

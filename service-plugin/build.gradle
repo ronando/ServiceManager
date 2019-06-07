@@ -1,0 +1,24 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    compile 'org.javassist:javassist:3.20.0-GA'
+    implementation "com.android.tools.build:gradle:3.1.4"
+    implementation 'com.crgt.ilife:service-base:1.0.1-SNAPSHOT'
+}
+
+apply from: '../gradle-maven-push.gradle'
+
+
+
+repositories {
+    google()
+    jcenter()
+    mavenCentral()
+}
+
+group = 'com.crgt.android'
+version = '1.0.0'
+

@@ -1,0 +1,17 @@
+apply plugin: 'java-library'
+apply plugin: 'maven'
+
+group = 'com.crgt.android'
+version = version_name
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api 'com.crgt.ilife:service-base:1.0.1-SNAPSHOT'
+    implementation 'com.google.auto.service:auto-service:1.0-rc3'
+    implementation 'com.squareup:javapoet:1.9.0'
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+
+apply from: '../gradle-maven-push.gradle'
