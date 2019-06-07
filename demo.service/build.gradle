@@ -24,3 +24,18 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation project(':demo.serviceModule')
 }
+
+
+
+
+task arrangeService(type: Copy) {
+    println 'arrangeService() begin'
+    println 'rootDir:'+ project.rootDir
+}
+
+
+afterEvaluate {
+    android.applicationVariants.all { variant ->
+        variant.javaCompiler.dependsOn(arrangeService)
+    }
+}
