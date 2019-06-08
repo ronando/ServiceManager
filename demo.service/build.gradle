@@ -27,15 +27,42 @@ dependencies {
 
 
 
+def destDir = project.rootDir.path + "/domin.test/" //todo:替换成MeriSdk路径
 
-task arrangeService(type: Copy) {
-    println 'arrangeService() begin'
-    println 'rootDir:'+ project.rootDir
+//清除service目录
+task cleanService(type: Delete) {
+    println 'cleanService:' + destDir
+    delete destDir
+}
+
+//把api文件收集放置到sdk目录下
+task collectService(type: Copy, dependsOn: cleanService) {
+    println '=============arrangeService() begin============'
+    def rootDir = project.rootDir
+    def suffix = '.api'
+    def javaSuffix = '.java'
+    def tree = fileTree(rootDir).include('**/*' + suffix)
+
+    println "rootDir:$rootDir"
+
+    // 遍历文件树
+    tree.each { File file ->
+        println file.name
+        copy {
+            from file.path
+            into destDir
+
+            rename {
+                file.name.replace(suffix, javaSuffix)
+            }
+        }
+    }
+    println '============arrangeService() end=============='
 }
 
 
 afterEvaluate {
     android.applicationVariants.all { variant ->
-        variant.javaCompiler.dependsOn(arrangeService)
+        variant.javaCompiler.dependsOn(collectService)
     }
 }
