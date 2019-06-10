@@ -69,7 +69,7 @@ public class ProtocolProcessor extends AbstractProcessor {
                     "        moduleName project.getName();\n" +
                     "    }\n" +
                     "}\n");
-            throw new RuntimeException("service-compiler >>> No module name, for more information, look at gradle log.");
+            throw new RuntimeException("base-service-compiler >>> No module name, for more information, look at gradle log.");
         }
     }
 

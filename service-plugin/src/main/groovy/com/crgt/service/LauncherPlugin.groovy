@@ -21,8 +21,8 @@ class LauncherPlugin implements Plugin<Project> {
                     it.plugins.apply('com.crgt.serviceimpl')
                 }
                 if (it.plugins.hasPlugin("com.android.application") || it.plugins.hasPlugin("com.android.library")) {
-                    it.dependencies.add('implementation', "com.crgt.ilife:service-api:1.0.0-SNAPSHOT")
-                    it.dependencies.add('annotationProcessor', "com.crgt.ilife:service-compiler:1.0.0-SNAPSHOT")
+                    it.dependencies.add('implementation', "com.crgt.android:base-service-api:1.0.0-SNAPSHOT")
+                    it.dependencies.add('annotationProcessor', "com.crgt.android:base-service-compiler:1.0.0-SNAPSHOT")
                     it.android.defaultConfig.javaCompileOptions.annotationProcessorOptions.argument('moduleName', it.name)
                 }
             }

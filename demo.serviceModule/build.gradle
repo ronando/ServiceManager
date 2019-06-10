@@ -29,9 +29,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
-    implementation 'com.crgt.ilife:service-api:1.0.0-SNAPSHOT'
-    annotationProcessor 'com.crgt.ilife:service-compiler:1.0.0-SNAPSHOT'
-    implementation 'com.crgt.ilife:service-base:1.0.1-SNAPSHOT'
+    implementation 'com.crgt.android:base-service-api:1.0.0-SNAPSHOT'
+    annotationProcessor 'com.crgt.android:base-service-compiler:1.0.0-SNAPSHOT'
+    implementation 'com.crgt.android:base-service-base:1.0.0-SNAPSHOT'
 }
 
 

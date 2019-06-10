@@ -6,7 +6,7 @@ version = version_name
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api 'com.crgt.ilife:service-base:1.0.1-SNAPSHOT'
+    api 'com.crgt.android:base-service-base:1.0.0-SNAPSHOT'
     implementation 'com.google.auto.service:auto-service:1.0-rc3'
     implementation 'com.squareup:javapoet:1.9.0'
 }

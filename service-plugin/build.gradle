@@ -6,7 +6,7 @@ dependencies {
     implementation localGroovy()
     compile 'org.javassist:javassist:3.20.0-GA'
     implementation "com.android.tools.build:gradle:3.1.4"
-    implementation 'com.crgt.ilife:service-base:1.0.1-SNAPSHOT'
+    implementation 'com.crgt.android:base-service-base:1.0.0-SNAPSHOT'
 }
 
 apply from: '../gradle-maven-push.gradle'
