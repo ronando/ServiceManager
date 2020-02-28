@@ -50,7 +50,7 @@ public class ProtocolProcessor extends AbstractProcessor {
         mFiler = processingEnvironment.getFiler();
         logger = new Logger(processingEnvironment.getMessager());
         types = processingEnvironment.getTypeUtils();
-        Elements elementUtil = processingEnvironment.getElementUtils();
+        Elements elementUtil = processingEnv.getElementUtils();
         iCollector = elementUtil.getTypeElement(ModuleServiceCollector.class.getName()).asType();
         iServiceMirror = elementUtil.getTypeElement(IService.class.getName()).asType();
 
